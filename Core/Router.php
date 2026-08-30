@@ -7,7 +7,7 @@ use Core\Middleware\Middleware;
 class Router
 {
 protected $routes= [];
-public  function add($url,$controller,$method){
+private  function add($url,$controller,$method){
     $this->routes[] = [
         'url' => $url,
         'controller' => $controller,
@@ -39,7 +39,9 @@ public function delete($url,$controller,$method){
 public function load($url,$method){
     foreach ($this->routes as $route){
         if($route['url'] == $url && $route['method'] == $method){
-            Middleware::run($route['middleware']);
+            if($route['middleware']){
+                Middleware::run($route['middleware']);
+            }
 
             return require base_path('Http/controllers/'.$route['controller'].'.php');
         }
