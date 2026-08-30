@@ -13,11 +13,11 @@ function base_path($path){
 }
 function view($view, $data=[]){
     extract($data);
-    return require base_path('/views/'.$view.'.php');
+    return require base_path('/views/'.$view.'.view.php');
 }
 
 function abort($code = 404){
-    view("$code");
+    view("abort/$code");
 }
 function redirect($url){
     header("Location: $url");

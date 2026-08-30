@@ -1,3 +1,5 @@
 <?php
-echo "Hello ovo je pocetna stranica";
-exit;
+
+view('public/index',[
+    'heading'=>"Home page"
+]);
