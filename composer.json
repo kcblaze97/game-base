@@ -1,0 +1,16 @@
+{
+    "name": "travel/game-base",
+    "authors": [
+        {
+            "name": "kcblaze97",
+            "email": "igorstojadinovic977@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
